@@ -1,0 +1,54 @@
+<html>
+ <head>
+    <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <h3>Switch between decimal and binary.</h3>
+    <p>Please enter a decimal number:</p>
+    <input id="decin">
+    <button type="button" onclick="decToBin()">Convert to binary</button>
+    <p id="binout"></p>
+
+
+    <h3>Switch between binary and decimal.</h3>
+    <p>Please enter a binary number:</p>
+    <input id="binin">
+    <button type="button" onclick="binToDec()">Convert to decimal</button>
+    <p id="decout"></p>
+
+
+    
+    <script>
+        function isBinary(array) {
+        for (var i = 0; i < array.length; ++i) {
+            if (array[i] !== '0' && array[i] !== '1') return false;
+        }
+        return true;
+        }
+        function decToBin() {
+            let binout;
+            let x = document.getElementById("decin").value;
+            if (isNaN(x)) {
+                binout = "Input not valid";
+            } else {
+                x = parseInt(x);
+                binout = x.toString(2);
+            }
+            document.getElementById("binout").innerHTML = binout;
+        }
+
+        function binToDec() {
+            let decout;
+            let x = document.getElementById("binin").value;
+            x = x.replaceAll(' ','');
+            let y = x.split('');
+            if (isNaN(x) || isBinary(y)===false) {
+                decout = "Input not valid";
+            } else {
+                decout = parseInt(x, 2);
+            }
+            document.getElementById("decout").innerHTML = decout;
+        }
+    </script>
+ </body>
+</html>

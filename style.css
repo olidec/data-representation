@@ -1,0 +1,32 @@
+<style>
+    {
+        box-sizing: border-box;
+    }
+
+    h2 {
+        margin-left: 10px;
+    }
+    /* Set additional styling options for the columns */
+    .column {
+    float: left;
+    }
+
+    /* Set width length for the left, right and middle columns */
+    .left {
+    width: 30%;
+    }
+
+    .middle {
+    width: 30%;
+    }
+    
+    .right {
+    width: 30%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+    </style>
