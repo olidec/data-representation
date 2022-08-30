@@ -1,0 +1,51 @@
+<html>
+ <head>
+    <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <div id="main" class="container">
+    <h3>Switch between ASCII and plain text.</h3>
+
+    <p>Please enter a ASCII code:</p>
+    <input id="ascin">
+    <button type="button" onclick="ascToChar()">Convert to plain text</button>
+    <p id="charout"></p>
+
+
+    <h3>Switch between plain text and ASCII.</h3>
+
+    <p>Please enter a single character:</p>
+    <input id="charin">
+    <button type="button" onclick="charToAsc()">Convert to ASCII</button>
+    <p id="ascout"></p>
+    </div>
+    
+
+
+    
+    <script>
+        function ascToChar() {
+            let x = document.getElementById("ascin").value;
+            let charout;
+            if (isNaN(x)) {
+                charout = 'Input not valid.'
+            } else {
+               x = parseInt(x); 
+               charout = String.fromCharCode(x);
+            }
+            document.getElementById("charout").innerHTML = charout;
+        }
+
+        function charToAsc() {
+            let x = document.getElementById("charin").value;
+            let ascout;
+            if (x.length > 1) {
+                ascout = 'Input not valid.'
+            } else {
+                ascout = x.charCodeAt(0)
+            }
+            document.getElementById("ascout").innerHTML = ascout;
+        }
+    </script>
+ </body>
+</html>
