@@ -6,7 +6,7 @@
     <div id="main" class="container">
     <h3>Switch between ASCII and plain text.</h3>
 
-    <p>Please enter a ASCII code:</p>
+    <p>Please enter an ASCII code between 33 and 127:</p>
     <input id="ascin">
     <button type="button" onclick="ascToChar()">Convert to plain text</button>
     <p id="charout"></p>
@@ -26,8 +26,9 @@
     <script>
         function ascToChar() {
             let x = document.getElementById("ascin").value;
+            let y = parseFloat(x);
             let charout;
-            if (isNaN(x)) {
+            if (isNaN(x) || (y < 33 || y > 127) || Number.isInteger(y) == false) {
                 charout = 'Input not valid.'
             } else {
                x = parseInt(x); 
