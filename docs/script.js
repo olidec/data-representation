@@ -9,7 +9,10 @@ var canvas = document.getElementById('c');
       // data represents the Uint8ClampedArray containing the data
       // in the RGBA order [r0, g0, b0, a0, r1, g1, b1, a1, ..., rn, gn, bn, an]
   
-      newData = [120,0,0,255,120,0,0,255,120,0,0,255,120,0,0,255]
+      newData = [ 120,120,0,255,
+                  120,0,120,255,
+                  0,120,120,255,
+                  120,0,0,255]
 
       imageData.data.set(newData);
       ctx.putImageData(imageData, 0, 0);
