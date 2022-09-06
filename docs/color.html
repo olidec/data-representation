@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="style.css">
  </head>
  <body>
-    <div class="container">
+    <div id="change-bg" class="container">
         <h3>Change the background color.</h3>
     <p>Please enter a hexcode:</p>
     <input id="colorin">
@@ -12,7 +12,7 @@
     <script>
         function changeColor() {
             let x = document.getElementById("colorin").value;
-            document.getElementById("main").style.backgroundColor = x;
+            document.getElementById("change-bg").style.backgroundColor = x;
         }
         // setInterval(changeColor,500)
     </script>
