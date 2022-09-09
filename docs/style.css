@@ -76,9 +76,11 @@ h1:hover {
 }
 
 canvas {
-    scale: 50;
+    width: 20vw;
+    align-items: center;
+    padding: 10px;
+    margin-left: 40vw;
     image-rendering: pixelated;
-    transform-origin: top left;
   }
 
 
