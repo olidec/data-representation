@@ -10,19 +10,26 @@ var canvas = document.getElementById('c');
       // in the RGBA order [r0, g0, b0, a0, r1, g1, b1, a1, ..., rn, gn, bn, an]
       let numPixels = imageData.data.length/4;
 
-      newData = [];
-      for (let i = 0; i < numPixels; i++) {
-        newData[4 * i + 3] = 255;
-      };
+      // grayscale
+      // newData = [];
+      // for (let i = 0; i < numPixels; i++) {
+      //   newData.push(i / numPixels * 255,i / numPixels * 255,i / numPixels * 255,255);
+      // };
+      // console.log(newData)
 
+      // checkerboard
+      newData = []
+      for (let i = 0; i < numPixels; i += 1) {
+        newData[4 * i + 3] = 255;
+      }
       for (let i = 0; i < numPixels; i += 2) {
-        newData[4 * i] = 255
+        newData[4 * i] = 255;
       }
-      
       for (let i = 1; i < numPixels; i += 2) {
-        newData[4 * i + 1] = 255
+        newData[4 * i + 1] = 255;
       }
-  
+      // manual
+      // newData = []
       // newData = [ 120,120,0,255,
       //             120,0,120,255,
       //             120,120,0,255,
